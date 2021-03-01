@@ -40,6 +40,5 @@ hydro.plot
 ```
 
 ## Snapshots
-```{r}
-knitr::include_graphics("pics/kettle.jpg")
-```
+![kettle]("docs/pics/kettle.jpg")
+
