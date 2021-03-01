@@ -8,12 +8,12 @@ editor_options:
 ---
 
 ```{r include=FALSE}
+require(workflowr)
 require(tidyverse)
 require(data.table)
 require(RColorBrewer)
 require(imager)
 require(DT)
-require(plotly)
 require(ggrepel)
 ```
 
@@ -39,4 +39,4 @@ hydro.plot
 ```
 
 ## Snapshots
-![test]("~/Documents/Brews/data/pics/kettle.jpg")
+![This was the kettle]("data/pics/kettle.jpg")
