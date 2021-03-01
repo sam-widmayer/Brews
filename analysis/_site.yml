@@ -1,17 +1,15 @@
 name: "Brews"
 output_dir: ../docs
 navbar:
-  title: "Brews"
+  title: "Sam's Home Brews"
   left:
   - text: Home
     href: index.html
-  - text: About
-    href: about.html
   - text: License
     href: license.html
 output:
   workflowr::wflow_html:
     toc: yes
     toc_float: yes
-    theme: cosmo
+    theme: slate
     highlight: textmate
