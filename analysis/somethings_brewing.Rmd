@@ -36,6 +36,8 @@ setwd("~/Documents/Brews/docs/")
 knitr::include_graphics("pics/OG.jpg")
 ```
 
+About 17 hours after pitching, active fermentation is well under way, with at least 10 bubbles in the air lock per minute. I took a hydrometer sample at that point to try to gauge how quickly things had taken off, and while they hydrometer reading wasn't too different from the OG (1.065), the sample already had a beautiful white head and golden body.
+
 ## Ingredients
 ```{r ingredients, echo=FALSE}
 setwd("~/Documents/Brews/")
