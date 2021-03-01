@@ -9,6 +9,7 @@ editor_options:
 
 ```{r include=FALSE}
 require(workflowr)
+require(knitr)
 require(tidyverse)
 require(data.table)
 require(RColorBrewer)
@@ -39,4 +40,5 @@ hydro.plot
 ```
 
 ## Snapshots
-![This was the kettle]("data/pics/kettle.jpg")
+
+![This was the kettle]("/Users/sam/Documents/Brews/pics/kettle.jpg")
