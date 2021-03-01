@@ -18,6 +18,24 @@ require(DT)
 require(ggrepel)
 ```
 
+For my first home brew since my initial foray roughly 7 years ago as a junior in college, I went with a [Hoegaarden clone kit](https://www.northernbrewer.com/products/gaarden-hoe-witbier) from Northern Brewer. During spring, I always find myself searching for a bright and herbal beer, but I wanted to supplement my normal propensity for session ales and juicy IPAs that I honestly gravitate towards all year round.
+
+## Snapshots
+
+I bought this kettle two days before brew day at Target for about $20. About 5 minutes into my 60 minute boil, I noticed there was some leakage by the handle. I quickly found this blue rope and secured a kitchen towel just under it so wort seeping through stopped burning on my stove. One can also see there is little room for error when adding fermentables if they get foamy. An investment in a 3-4 gallon kettle is under heavy consideration.
+
+```{r snapshots1, echo=FALSE}
+setwd("~/Documents/Brews/docs/")
+knitr::include_graphics("pics/kettle.jpg")
+```
+
+I got this graduated cylinder for $6 on Amazon. It's tough to see from the picture, but the SG reading was 1.07 flat. This is a significant deviation from the expected OG provided with the Northern Brewer instruction kit (OG: 1.049). That difference, as well as the color, fuels my initial prediction that the end result of this beer could be a far cry from the brighter witbier I anticipated.
+
+```{r snapshots2, echo=FALSE}
+setwd("~/Documents/Brews/docs/")
+knitr::include_graphics("pics/OG.jpg")
+```
+
 ## Ingredients
 ```{r ingredients, echo=FALSE}
 setwd("~/Documents/Brews/")
@@ -37,12 +55,5 @@ hydro.plot <- ggplot(hydrometer, mapping = aes(x = Day, y = SG, colour = Batch, 
   theme(legend.position = "none") + 
   labs(x = "Day", y = "Specific Gravity")
 hydro.plot
-```
-
-## Snapshots
-```{r snapshots, echo=FALSE}
-setwd("~/Documents/Brews/docs/")
-knitr::include_graphics("pics/kettle.jpg")
-knitr::include_graphics("pics/OG.jpg")
 ```
 
