@@ -41,6 +41,7 @@ hydro.plot
 
 ## Snapshots
 ```{r}
+setwd("~/Documents/Brews/docs/")
 knitr::include_graphics("pics/kettle.jpg")
 ```
 
