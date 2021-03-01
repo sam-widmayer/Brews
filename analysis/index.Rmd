@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "My Home Brewing Website"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -8,4 +8,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+Welcome to my home brewing website. I'm only starting in earnest, but I will try to compile results for individual brews and hopefully, with more experience, compile other sorts of reviews and analyses.
+
+1. [My inaugural brew](somethings_brewing.html) was by first in a long time!
