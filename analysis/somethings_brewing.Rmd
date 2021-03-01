@@ -40,5 +40,5 @@ hydro.plot
 ```
 
 ## Snapshots
-![kettle]("docs/pics/kettle.jpg")
+![kettle]("pics/kettle.jpg")
 
