@@ -1,5 +1,5 @@
 # Brews
 
-A [workflowr][] project.
+### Enabled by [workflowr](https://github.com/jdblischak/workflowr)
 
-[workflowr]: https://github.com/jdblischak/workflowr
+### [Website](https://sam-widmayer.github.io/Brews/index.html)
