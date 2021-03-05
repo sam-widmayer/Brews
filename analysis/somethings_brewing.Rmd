@@ -47,6 +47,7 @@ DT::datatable(ingredients, rownames = F, filter = "top", options = list(pageLeng
 
 ## Hydrometer Measurements
 ```{r hydrometer, echo=FALSE}
+setwd("~/Documents/Brews/")
 hydrometer <- data.table::fread("data/hydrometer.csv")
 hydro.plot <- ggplot(hydrometer, mapping = aes(x = Day, y = SG, colour = Batch, group = Batch, label = Note)) + 
   theme_bw() +
