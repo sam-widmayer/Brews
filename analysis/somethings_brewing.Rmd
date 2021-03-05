@@ -36,7 +36,7 @@ setwd("~/Documents/Brews/docs/")
 knitr::include_graphics("pics/OG.jpg")
 ```
 
-About 17 hours after pitching, active fermentation is well under way, with at least 10 bubbles in the air lock per minute. I took a hydrometer sample at that point to try to gauge how quickly things had taken off, and while they hydrometer reading wasn't too different from the OG (1.065), the sample already had a beautiful white head and golden body.
+About 17 hours after pitching, active fermentation is well under way, with at least 10 bubbles in the air lock per minute. I took a hydrometer sample at that point to try to gauge how quickly things had taken off, and while the hydrometer reading wasn't too different from the OG (1.065), the sample already had a beautiful white head and golden body.
 
 ## Ingredients
 ```{r ingredients, echo=FALSE}
@@ -48,14 +48,18 @@ DT::datatable(ingredients, rownames = F, filter = "top", options = list(pageLeng
 ## Hydrometer Measurements
 ```{r hydrometer, echo=FALSE}
 hydrometer <- data.table::fread("data/hydrometer.csv")
-hydro.plot <- ggplot(hydrometer, mapping = aes(x = Day, y = SG, colour = Batch, label = Note)) + 
+hydro.plot <- ggplot(hydrometer, mapping = aes(x = Day, y = SG, colour = Batch, group = Batch, label = Note)) + 
   theme_bw() +
   geom_point() +
+  geom_line() + 
   geom_text_repel(mapping = aes(label = Note), box.padding = 2, point.padding = 0.1) + 
   scale_x_continuous(breaks = seq(0,21,1), limits = c(0,21)) + 
-  scale_y_continuous(breaks = seq(1,1.2,0.05), limits = c(1,1.2)) + 
+  scale_y_continuous(breaks = seq(1,1.1,0.05), limits = c(1,1.1)) + 
   theme(legend.position = "none") + 
   labs(x = "Day", y = "Specific Gravity")
 hydro.plot
 ```
+
+#### ABV: ```r paste0(round((hydrometer[1,]$SG-hydrometer[nrow(hydrometer),]$SG) * 131.25,2), "%") ```
+
 
