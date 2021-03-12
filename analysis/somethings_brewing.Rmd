@@ -61,6 +61,6 @@ hydro.plot <- ggplot(hydrometer, mapping = aes(x = Day, y = SG, colour = Batch, 
 hydro.plot
 ```
 
-<!-- #### ABV: `r paste0(round((hydrometer[1,]$SG-hydrometer[nrow(hydrometer),]$SG) * 131.25,2), "%")` -->
+#### ABV: `r paste0(round((hydrometer[1,]$SG-hydrometer[nrow(hydrometer),]$SG) * 131.25,2), "%")`
 
 
