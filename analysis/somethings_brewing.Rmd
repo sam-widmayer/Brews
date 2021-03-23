@@ -38,6 +38,13 @@ knitr::include_graphics("pics/OG.jpg")
 
 About 17 hours after pitching, active fermentation is well under way, with at least 10 bubbles in the air lock per minute. I took a hydrometer sample at that point to try to gauge how quickly things had taken off, and while the hydrometer reading wasn't too different from the OG (1.065), the sample already had a beautiful white head and golden body.
 
+```{r snapshots3, echo=FALSE}
+setwd("~/Documents/Brews/docs/")
+knitr::include_graphics("pics/bottles.jpg")
+```
+
+I decided to skip a secondary conditioning step, and bottled at the three week point. This was partially a necessity - because I didn't have a secondary tank - and a choice. My primary fermenter has a "no-siphon" spigot and I didn't think I would mind a "hazier" and the time of writing. One thing I didn't expect was drastically overestimating how much beer I made! I planned on two dozen 12 oz bottles being sufficient, but the math must have gone awry somewhere. Luckily, I had a growler laying around so I didn't have to let the remainder of my beer go to waste. Nevertheless, I did have to run over to [Temperance](http://temperancebeer.com/) to beg for a cap for it in exchange for buying a 6-pack.
+
 ## Ingredients
 ```{r ingredients, echo=FALSE}
 setwd("~/Documents/Brews/")
@@ -61,6 +68,6 @@ hydro.plot <- ggplot(hydrometer, mapping = aes(x = Day, y = SG, colour = Batch, 
 hydro.plot
 ```
 
-#### ABV: `r paste0(round((hydrometer[1,]$SG-hydrometer[nrow(hydrometer),]$SG) * 131.25,2), "%")`
+### ABV: `r paste0(round((hydrometer[1,]$SG-hydrometer[nrow(hydrometer),]$SG) * 131.25,2), "%")`
 
 
