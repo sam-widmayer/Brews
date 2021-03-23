@@ -13,29 +13,21 @@
 
 <title>Something’s Brewing</title>
 
-<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
 <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="site_libs/datatables-binding-0.17/datatables.js"></script>
 <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -45,8 +37,8 @@
 <script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
 <link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
 <script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
-<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -58,8 +50,6 @@ div.section {
 }
 </style>
 
-
-
 <style type="text/css">
   code{white-space: pre-wrap;}
   span.smallcaps{font-variant: small-caps;}
@@ -70,6 +60,11 @@ div.section {
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -82,7 +77,32 @@ if (window.hljs) {
 
 
 
-
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
 
 
 
@@ -92,6 +112,10 @@ if (window.hljs) {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -108,13 +132,40 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
-pre code {
-  padding: 0;
-}
 </style>
 
 
 <style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
 .dropdown-submenu {
   position: relative;
 }
@@ -142,7 +193,7 @@ pre code {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
+  border-left-color: #ffffff;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -154,7 +205,7 @@ pre code {
 }
 </style>
 
-<script type="text/javascript">
+<script>
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -165,23 +216,10 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.tab('show');
+  menuAnchor.parent().addClass('active');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
 });
 </script>
 
@@ -193,6 +231,7 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -318,13 +357,13 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-sm-12 col-md-4 col-lg-3">
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
 </div>
 
-<div class="toc-content col-sm-12 col-md-8 col-lg-9">
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -351,7 +390,7 @@ div.tocify {
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/sam-widmayer/Brews">
-    <span class="fas fa-github"></span>
+    <span class="fa fa-github"></span>
      
     Source code
   </a>
@@ -361,7 +400,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div id="header">
+<div class="fluid-row" id="header">
 
 
 
@@ -390,7 +429,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-03-12
+<strong>Last updated:</strong> 2021-03-23
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
@@ -405,7 +444,7 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <hr>
 </div>
 <div id="checks" class="tab-pane fade">
-<div id="workflowr-checks" class="panel-group">
+<div class="panel-group" id="workflowr-checks">
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
@@ -438,7 +477,7 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 </div>
 <div id="strongSeedstrongcodesetseed20210228code" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The command <code>set.seed(20210228)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+<p>The command <code>set.seed(20210228)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
 </div>
 </div>
 </div>
@@ -513,22 +552,29 @@ docs
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomsamwidmayerBrewstreebdc9ad2e39684c7c1672dfce54a3b86d2073678ftargetblankbdc9ad2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/sam-widmayer/Brews/tree/bdc9ad2e39684c7c1672dfce54a3b86d2073678f" target="_blank">bdc9ad2</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomsamwidmayerBrewstree215cd3d5eaff69514609f4ded662803c50eea6b5targetblank215cd3da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/sam-widmayer/Brews/tree/215cd3d5eaff69514609f4ded662803c50eea6b5" target="_blank">215cd3d</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomsamwidmayerBrewstreebdc9ad2e39684c7c1672dfce54a3b86d2073678ftargetblankbdc9ad2a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomsamwidmayerBrewstree215cd3d5eaff69514609f4ded662803c50eea6b5targetblank215cd3da" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/sam-widmayer/Brews/tree/bdc9ad2e39684c7c1672dfce54a3b86d2073678f" target="_blank">bdc9ad2</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/sam-widmayer/Brews/tree/215cd3d5eaff69514609f4ded662803c50eea6b5" target="_blank">215cd3d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
-working directory clean
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rhistory
+    Ignored:    data/.DS_Store
+
+Unstaged changes:
+    Modified:   data/hydrometer.csv
+
 </code></pre>
 <p>
 Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
@@ -566,6 +612,57 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/sam-widmayer/Brews/blob/215cd3d5eaff69514609f4ded662803c50eea6b5/analysis/somethings_brewing.Rmd" target="_blank">215cd3d</a>
+</td>
+<td>
+Sam Widmayer
+</td>
+<td>
+2021-03-23
+</td>
+<td>
+bottling day update
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/sam-widmayer/Brews/blob/20ae002a8dace2f7068eb8a6517b3d3d98d9da0d/analysis/somethings_brewing.Rmd" target="_blank">20ae002</a>
+</td>
+<td>
+Sam Widmayer
+</td>
+<td>
+2021-03-23
+</td>
+<td>
+bottling day update
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/sam-widmayer/Brews/0f5851215d4c2d0f159ed0ce37bd30737787593b/docs/somethings_brewing.html" target="_blank">0f58512</a>
+</td>
+<td>
+sam-widmayer
+</td>
+<td>
+2021-03-12
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1131,6 +1228,45 @@ Sam Widmayer
 </div>
 </div>
 <p>About 17 hours after pitching, active fermentation is well under way, with at least 10 bubbles in the air lock per minute. I took a hydrometer sample at that point to try to gauge how quickly things had taken off, and while the hydrometer reading wasn’t too different from the OG (1.065), the sample already had a beautiful white head and golden body.</p>
+<p><img src="pics/bottles.jpeg" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bottles">
+Past versions of bottles.jpeg
+</button>
+</p>
+<div id="fig-bottles" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/sam-widmayer/Brews/blob/20ae002a8dace2f7068eb8a6517b3d3d98d9da0d/docs/pics/bottles.jpeg" target="_blank">20ae002</a>
+</td>
+<td>
+Sam Widmayer
+</td>
+<td>
+2021-03-23
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>I decided to skip a secondary conditioning step, and bottled at the three week point. This was partially a necessity - because I didn’t have a secondary tank - and a choice. My primary fermenter has a “no-siphon” spigot and I didn’t think I would mind a “hazier” and the time of writing. One thing I didn’t expect was drastically overestimating how much beer I made! I planned on two dozen 12 oz bottles being sufficient, but the math must have gone awry somewhere. Luckily, I had a growler laying around so I didn’t have to let the remainder of my beer go to waste. Nevertheless, I did have to run over to <a href="http://temperancebeer.com/">Temperance</a> to beg for a cap for it in exchange for buying a 6-pack.</p>
 </div>
 <div id="ingredients" class="section level2">
 <h2>Ingredients</h2>
@@ -1162,6 +1298,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/sam-widmayer/Brews/blob/0f5851215d4c2d0f159ed0ce37bd30737787593b/docs/figure/somethings_brewing.Rmd/hydrometer-1.png" target="_blank">0f58512</a>
+</td>
+<td>
+sam-widmayer
+</td>
+<td>
+2021-03-12
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/sam-widmayer/Brews/blob/692d445db7371661ca8003af5c1b7ad55805e683/docs/figure/somethings_brewing.Rmd/hydrometer-1.png" target="_blank">692d445</a>
@@ -1199,8 +1346,8 @@ Sam Widmayer
 </table>
 </div>
 </div>
-<div id="abv-6.56" class="section level4">
-<h4>ABV: 6.56%</h4>
+<div id="abv-7.88" class="section level3">
+<h3>ABV: 7.88%</h3>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1209,13 +1356,13 @@ Sam Widmayer
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 4.0.4 (2021-02-15)
-Platform: x86_64-apple-darwin17.0 (64-bit)
-Running under: macOS Catalina 10.15.7
+<pre><code>R version 3.6.3 (2020-02-29)
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+Running under: macOS Mojave 10.14.6
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -1224,30 +1371,29 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] ggrepel_0.9.1      DT_0.17            imager_0.42.7      magrittr_2.0.1    
- [5] RColorBrewer_1.1-2 data.table_1.14.0  forcats_0.5.1      stringr_1.4.0     
- [9] dplyr_1.0.4        purrr_0.3.4        readr_1.4.0        tidyr_1.1.2       
-[13] tibble_3.1.0       ggplot2_3.3.3      tidyverse_1.3.0    knitr_1.31        
+ [1] ggrepel_0.8.2      DT_0.17            imager_0.42.7      magrittr_2.0.1    
+ [5] RColorBrewer_1.1-2 data.table_1.13.2  forcats_0.5.0      stringr_1.4.0     
+ [9] dplyr_1.0.2        purrr_0.3.4        readr_1.4.0        tidyr_1.1.2       
+[13] tibble_3.0.4       ggplot2_3.3.2      tidyverse_1.3.0    knitr_1.30        
 [17] workflowr_1.6.2   
 
 loaded via a namespace (and not attached):
- [1] httr_1.4.2        sass_0.3.1        jsonlite_1.7.2    modelr_0.1.8     
- [5] bslib_0.2.4       assertthat_0.2.1  highr_0.8         cellranger_1.1.0 
- [9] tiff_0.1-6        yaml_2.2.1        pillar_1.5.0      backports_1.2.1  
-[13] glue_1.4.2        digest_0.6.27     promises_1.2.0.1  rvest_0.3.6      
-[17] colorspace_2.0-0  readbitmap_0.1.5  htmltools_0.5.1.1 httpuv_1.5.5     
-[21] pkgconfig_2.0.3   broom_0.7.5       haven_2.3.1       scales_1.1.1     
-[25] whisker_0.4       jpeg_0.1-8.1      later_1.1.0.1     git2r_0.28.0     
-[29] generics_0.1.0    farver_2.0.3      ellipsis_0.3.1    withr_2.4.1      
-[33] cli_2.3.1         crayon_1.4.1      readxl_1.3.1      evaluate_0.14    
-[37] fs_1.5.0          fansi_0.4.2       xml2_1.3.2        tools_4.0.4      
-[41] hms_1.0.0         bmp_0.3           lifecycle_1.0.0   munsell_0.5.0    
-[45] reprex_1.0.0      compiler_4.0.4    jquerylib_0.1.3   rlang_0.4.10     
-[49] grid_4.0.4        rstudioapi_0.13   htmlwidgets_1.5.3 crosstalk_1.1.1  
-[53] igraph_1.2.6      rmarkdown_2.7     gtable_0.3.0      DBI_1.1.1        
-[57] R6_2.5.0          lubridate_1.7.9.2 utf8_1.1.4        rprojroot_2.0.2  
-[61] stringi_1.5.3     Rcpp_1.0.6        vctrs_0.3.6       png_0.1-7        
-[65] dbplyr_2.1.0      tidyselect_1.1.0  xfun_0.21        </code></pre>
+ [1] Rcpp_1.0.5        lubridate_1.7.9.2 png_0.1-7         assertthat_0.2.1 
+ [5] rprojroot_2.0.2   digest_0.6.27     tiff_0.1-6        R6_2.5.0         
+ [9] cellranger_1.1.0  backports_1.2.0   reprex_0.3.0      evaluate_0.14    
+[13] httr_1.4.2        highr_0.8         pillar_1.4.7      rlang_0.4.8      
+[17] readxl_1.3.1      rstudioapi_0.13   whisker_0.4       bmp_0.3          
+[21] rmarkdown_2.5     htmlwidgets_1.5.2 igraph_1.2.5      munsell_0.5.0    
+[25] broom_0.7.2       compiler_3.6.3    httpuv_1.5.4      modelr_0.1.8     
+[29] xfun_0.19         pkgconfig_2.0.3   htmltools_0.5.0   readbitmap_0.1.5 
+[33] tidyselect_1.1.0  fansi_0.4.1       crayon_1.3.4      dbplyr_2.0.0     
+[37] withr_2.3.0       later_1.1.0.1     grid_3.6.3        jsonlite_1.7.1   
+[41] gtable_0.3.0      lifecycle_0.2.0   DBI_1.1.0         git2r_0.27.1     
+[45] scales_1.1.1      cli_2.2.0         stringi_1.5.3     farver_2.0.3     
+[49] fs_1.5.0          promises_1.1.1    xml2_1.3.2        ellipsis_0.3.1   
+[53] generics_0.1.0    vctrs_0.3.5       tools_3.6.3       glue_1.4.2       
+[57] crosstalk_1.1.0.1 hms_0.5.3         jpeg_0.1-8.1      yaml_2.2.1       
+[61] colorspace_2.0-0  rvest_0.3.6       haven_2.3.1      </code></pre>
 </div>
 </div>
 </div>
@@ -1264,8 +1410,6 @@ footer is added to webpages before the MathJax javascript. -->
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
 </script>
-
-
 
 
 </div>
@@ -1295,7 +1439,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
+    $(this).parent().toggleClass('nav-tabs-open')
   });
 });
 </script>
